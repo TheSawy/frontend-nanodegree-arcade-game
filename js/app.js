@@ -107,6 +107,14 @@ let enemies = [];
 let placesY = [63, 147, 230];
 
 
+/*
+* functioning enemies speed 
+*/
+
+placesY.forEach(function (locationY) {
+    bug = new bug(0, locationY, 100);
+    enemies.push(bug);
+});
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
