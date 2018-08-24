@@ -87,7 +87,15 @@ Player.prototype.handleInput = function (keyPress) {
     if (keyPress == 'down' && this.y < 405) {
         this.y += 83;
     };
-
+/*
+* as a player reach the water, bring him back the begining point
+*/
+if (this.y < 0) {
+    setTimeout(() => {
+        this.x = 202;
+        this.y = 405;
+    }, 1000);
+};
 };
 
 // This listens for key presses and sends the keys to your
