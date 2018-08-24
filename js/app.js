@@ -90,13 +90,22 @@ Player.prototype.handleInput = function (keyPress) {
 /*
 * as a player reach the water, bring him back the begining point
 */
-if (this.y < 0) {
-    setTimeout(() => {
-        this.x = 202;
-        this.y = 405;
-    }, 1000);
+    if (this.y < 0) {
+        setTimeout(() => {
+            this.x = 202;
+            this.y = 405;
+        }, 1000);
+    };
 };
-};
+
+/*
+* assigning the enemy locations
+*/
+
+let enemies = [];
+// where the enemies will be
+let placesY = [63, 147, 230];
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
