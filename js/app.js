@@ -55,7 +55,7 @@ let Player = function (x, y) {
     this.y = y;
 
 
-    //The image of the player of char-girl is added to the playing field 
+    //The image of the player of char-boy is added to the playing field 
     this.player = 'images/char-boy.png';
 };
 
@@ -63,12 +63,13 @@ Player.prototype.update = function (dt) {
 
 };
 
+// Draw the Player on the screen
 
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.player), this.x, this.y);
 };
 
-
+let player = new Player(202,405);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -127,7 +128,7 @@ placesY.forEach(function (locationY) {
     allEnemies.push(bug);
 });
 
-let player = new Player(202,405);
+
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
