@@ -36,6 +36,19 @@ Enemy.prototype.update = function(dt) {
     };
 };
 
+/*
+* assign player variable
+*/
+var Player = function (x, y) {
+
+    this.x = x;
+    this.y = y;
+
+    //The image of the player of char-girl is added to the playing field 
+    this.player = 'images/char-boy.png';
+};
+
+
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
