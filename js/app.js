@@ -36,17 +36,6 @@ Enemy.prototype.update = function(dt) {
     };
 };
 
-/*
-* assign player variable
-*/
-var Player = function (x, y) {
-
-    this.x = x;
-    this.y = y;
-
-    //The image of the player of char-girl is added to the playing field 
-    this.player = 'images/char-boy.png';
-};
 
 
 // Draw the enemy on the screen, required method for game
@@ -57,13 +46,49 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+/*
+* assign player variable
+*/
+let Player = function (x, y) {
 
+    this.x = x;
+    this.y = y;
+
+    //The image of the player of char-girl is added to the playing field 
+    this.player = 'images/char-boy.png';
+};
+let player = new Player(202,405);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
+/*
+* functioning player moves
+*/
 
+Player.prototype.handleInput = function (keyPress) {
+
+    
+    if (keyPress == 'left' && this.x > 0) {
+        this.x -= 102;
+    };
+
+
+    if (keyPress == 'right' && this.x < 405) {
+        this.x += 102;
+    };
+
+    
+    if (keyPress == 'up' && this.y > 0) {
+        this.y -= 83;
+    };
+
+    if (keyPress == 'down' && this.y < 405) {
+        this.y += 83;
+    };
+
+};
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
